@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "target": "es6",
+    "strict": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    // "noImplicitAny": false,
+    "strictNullChecks": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": "."
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}

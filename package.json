@@ -1,0 +1,45 @@
+{
+  "name": "simple-app",
+  "version": "0.0.1",
+  "description": "This is a simple app that based on Quasar Framework",
+  "productName": "My Simple App",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "tamnd2 <tamnd2@vng.com.vn>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ./",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "@types/vuelidate": "^0.7.5",
+    "axios": "^0.18.1",
+    "quasar": "^1.0.0",
+    "vue-i18n": "^8.0.0",
+    "vuelidate": "^0.7.4",
+    "vuelidate-property-decorators": "^1.0.27",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-typescript": "^1.0.0-beta.1",
+    "@types/node": "11.9.5",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "typescript": "^3.3.3"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
