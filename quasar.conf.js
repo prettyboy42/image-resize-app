@@ -85,11 +85,17 @@ module.exports = function(ctx) {
       env: ctx.dev
         ? {
             // so on dev we'll have
-            VUE_APP_ROOT_API: JSON.stringify('http://localhost:9090')
+            VUE_APP_ROOT_API: JSON.stringify('http://localhost:9090'),
+            UPLOAD_IMAGE_URL: JSON.stringify(
+              'http://localhost:9066/rest/v2/upload'
+            )
           }
         : {
             // and on build (production):
-            VUE_APP_ROOT_API: JSON.stringify('https://prod.api.com')
+            VUE_APP_ROOT_API: JSON.stringify('https://prod.api.com'),
+            UPLOAD_IMAGE_URL: JSON.stringify(
+              'https://demo.cuocsongdongian.com/rest/v2/upload'
+            )
           },
       extendWebpack(cfg) {
         cfg.module.rules.push({

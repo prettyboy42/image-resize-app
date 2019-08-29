@@ -14,7 +14,6 @@
         @failed="onFailedFn"
         multiple
         auto-upload
-        color="teal"
         flat
         square
         bordered
@@ -117,6 +116,7 @@
 import Vue from 'vue';
 import { Component, Inject } from 'vue-property-decorator';
 import LoginService from '../boot/services/login.service';
+import { UPLOAD_IMAGE_URL } from '../constants';
 // we import all of `date`
 import { format } from 'quasar';
 // destructuring to keep only what is needed
@@ -154,7 +154,7 @@ export default class IndexPage extends Vue {
   public uploadFactoryFn(files: any): any {
     const reqPromise = new Promise(resolve => {
       resolve({
-        url: 'http://localhost:9066/rest/v2/upload',
+        url: UPLOAD_IMAGE_URL,
         // url: '/upload',
         method: 'POST',
         withCredentials: true,
