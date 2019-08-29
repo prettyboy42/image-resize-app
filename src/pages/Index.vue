@@ -116,7 +116,7 @@
 import Vue from 'vue';
 import { Component, Inject } from 'vue-property-decorator';
 import LoginService from '../boot/services/login.service';
-import { UPLOAD_IMAGE_URL } from '../constants';
+import { UPLOAD_IMAGE_URL, UPLOAD_AUTHEN_KEY } from '../constants';
 // we import all of `date`
 import { format } from 'quasar';
 // destructuring to keep only what is needed
@@ -161,7 +161,7 @@ export default class IndexPage extends Vue {
         headers: [
           {
             name: 'Authorization',
-            value: 'Basic ' + btoa('admin:admin')
+            value: 'Basic ' + btoa(UPLOAD_AUTHEN_KEY)
           }
         ],
         formFields: [

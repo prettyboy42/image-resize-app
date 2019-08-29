@@ -84,19 +84,21 @@ module.exports = function(ctx) {
       // extractCSS: false,
       env: ctx.dev
         ? {
-            // so on dev we'll have
-            VUE_APP_ROOT_API: JSON.stringify('http://localhost:9090'),
-            UPLOAD_IMAGE_URL: JSON.stringify(
-              'http://localhost:9066/rest/v2/upload'
-            )
-          }
+          // so on dev we'll have
+          VUE_APP_ROOT_API: JSON.stringify('http://localhost:9090'),
+          UPLOAD_IMAGE_URL: JSON.stringify(
+            'http://localhost:9066/rest/v2/upload'
+          ),
+          UPLOAD_AUTHEN_KEY: JSON.stringify('admin:admin')
+        }
         : {
-            // and on build (production):
-            VUE_APP_ROOT_API: JSON.stringify('https://prod.api.com'),
-            UPLOAD_IMAGE_URL: JSON.stringify(
-              'https://demo.cuocsongdongian.com/rest/v2/upload'
-            )
-          },
+          // and on build (production):
+          VUE_APP_ROOT_API: JSON.stringify('https://prod.api.com'),
+          UPLOAD_IMAGE_URL: JSON.stringify(
+            'https://demo.cuocsongdongian.com/rest/v2/upload'
+          ),
+          UPLOAD_AUTHEN_KEY: JSON.stringify('user:CtLaAc3A')
+        },
       extendWebpack(cfg) {
         cfg.module.rules.push({
           enforce: 'pre',

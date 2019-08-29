@@ -8,3 +8,4 @@ export const LOGIN_ALREADY_USED_TYPE = PROBLEM_BASE_URL + '/login-already-used';
 export const EMAIL_NOT_FOUND_TYPE = PROBLEM_BASE_URL + '/email-not-found';
 
 export const UPLOAD_IMAGE_URL = process.env.UPLOAD_IMAGE_URL;
+export const UPLOAD_AUTHEN_KEY = process.env.UPLOAD_AUTHEN_KEY;
