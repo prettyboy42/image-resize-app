@@ -95,7 +95,7 @@ module.exports = function(ctx) {
           // and on build (production):
           VUE_APP_ROOT_API: JSON.stringify('https://prod.api.com'),
           UPLOAD_IMAGE_URL: JSON.stringify(
-            'https://demo.cuocsongdongian.com/rest/v2/upload'
+            'https://api.cuocsongdongian.com/rest/v2/upload'
           ),
           UPLOAD_AUTHEN_KEY: JSON.stringify('user:CtLaAc3A')
         },
