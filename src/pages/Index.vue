@@ -12,7 +12,6 @@
         @uploaded="onFinishedFn"
         @factory-failed="onFactoryFailedFn"
         @failed="onFailedFn"
-        multiple
         auto-upload
         flat
         square
@@ -84,7 +83,7 @@
                 <q-item-label class="full-width ellipsis">After resize</q-item-label>
                 <q-item-label caption>{{ getSizeLabelAfterResized(file.xhr) }}</q-item-label>
                 <q-item-label caption>
-                  <a :href="getUrlAfterResized(file.xhr)" download>download</a>
+                  <a :href="getDownloadUrl(file.xhr)" download>download</a>
                 </q-item-label>
               </q-item-section>
 
@@ -125,6 +124,7 @@ const { humanStorageSize } = format;
 interface UploadItem {
   name: string;
   url: string;
+  downloadUrl: string;
   size: number;
 }
 interface UploadResult {
@@ -155,7 +155,6 @@ export default class IndexPage extends Vue {
     const reqPromise = new Promise(resolve => {
       resolve({
         url: UPLOAD_IMAGE_URL,
-        // url: '/upload',
         method: 'POST',
         withCredentials: true,
         headers: [
@@ -200,6 +199,11 @@ export default class IndexPage extends Vue {
   public getUrlAfterResized(xhr: XMLHttpRequest): string {
     const item: UploadItem = JSON.parse(xhr.responseText).message[0];
     return item.url ? item.url : '';
+  }
+
+  public getDownloadUrl(xhr: XMLHttpRequest): string {
+    const item: UploadItem = JSON.parse(xhr.responseText).message[0];
+    return item.downloadUrl ? item.downloadUrl : '';
   }
 
   public get authenticated(): boolean {
