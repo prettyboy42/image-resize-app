@@ -1,9 +1,25 @@
 <template>
   <q-page padding>
+    <div class="q-pa-md">
+      <div class="q-gutter-md row items-start"></div>
+    </div>
     <div
-      class="fixed-center justify-between shadow-24"
-      style="min-width: 650px; min-height: 300px;"
+      class="q-pa-md fixed-center justify-between shadow-24"
+      style="min-width: 700px; min-height: 450px;"
     >
+      <div class="q-gutter-sm column items-start">
+        <!-- <q-badge color="secondary">Image quality: {{ imageQuality }} (0 to 100)</q-badge> -->
+        <label>Image quality: {{ imageQuality }} (0 to 100)</label>
+        <q-slider v-model="imageQuality" :min="0" :max="100" label color="green" />
+        <!-- <q-input v-model="imageWidth" label="Image Width" /> -->
+
+        <div class="q-gutter-sm">
+          <!-- <label class="row">Other options</label> -->
+          <q-checkbox v-model="reserveMetadata" label="Preserve metadata" color="teal" />
+          <q-checkbox v-model="reserveOrientation" label="Auto orientation" color="orange" />
+        </div>
+      </div>
+      <q-space />
       <q-uploader
         accept="image/jpeg, image/png"
         label="Upload images. Max upload size (5MB)"
@@ -18,6 +34,7 @@
         bordered
         no-thumbnails
         class="full-width"
+        style="margin-top: 20px;"
       >
         <template v-slot:header="scope">
           <div class="row no-wrap items-center q-pa-sm q-gutter-xs">
@@ -140,6 +157,10 @@ export default class IndexPage extends Vue {
   @Inject('loginService')
   private loginService: () => LoginService;
   private retFiles: UploadResult[] = [];
+  private reserveMetadata: boolean = false;
+  private reserveOrientation: boolean = true;
+  private imageQuality: number = 75;
+  private imageWidth: number = 1;
 
   public openLogin(): void {
     this.$router.push('/login');
@@ -167,6 +188,22 @@ export default class IndexPage extends Vue {
           {
             name: 'clientFileId',
             value: Date.now()
+          },
+          {
+            name: 'imageQuality',
+            value: this.imageQuality
+          },
+          {
+            name: 'imageWidth',
+            value: this.imageWidth
+          },
+          {
+            name: 'keepMetaInfo',
+            value: this.reserveMetadata
+          },
+          {
+            name: 'enableAutoOrientation',
+            value: this.reserveOrientation
           }
         ],
         fieldName: 'file'

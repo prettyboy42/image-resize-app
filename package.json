@@ -12,17 +12,17 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
+    "@quasar/extras": "^1.3.1",
     "@types/vuelidate": "^0.7.5",
     "axios": "^0.18.1",
-    "quasar": "^1.0.0",
+    "quasar": "^1.1.0",
     "vue-i18n": "^8.0.0",
     "vuelidate": "^0.7.4",
     "vuelidate-property-decorators": "^1.0.27",
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
+    "@quasar/app": "^1.0.6",
     "@quasar/quasar-app-extension-typescript": "^1.0.0-beta.1",
     "@types/node": "11.9.5",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
