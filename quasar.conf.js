@@ -31,7 +31,7 @@ module.exports = function(ctx) {
       // iconSet: 'ionicons-v4',
       // lang: 'en', // Quasar language
 
-      // all: true, // --- includes everything; for dev only!
+      // all: 'auto', // --- includes everything; for dev only!
 
       components: [
         'QLayout',
@@ -67,7 +67,9 @@ module.exports = function(ctx) {
         'QSpinner',
         'QCheckbox',
         'QSlider',
-        'QBadge'
+        'QBadge',
+        'QRadio',
+        'QOptionGroup'
       ],
 
       directives: ['Ripple', 'ClosePopup'],
